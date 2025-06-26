@@ -1,0 +1,15 @@
+# Node.js
+node_modules/
+dist/
+.env
+package-lock.json
+
+# Logs
+*.log
+
+# IDE/Editor
+.vscode/
+*.code-workspace
+
+# TypeScript
+*.tsbuildinfo
