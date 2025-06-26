@@ -1,0 +1,15 @@
+sequenceDiagram
+Client->>API: POST /send-envelope
+API->>Redis Queue: Push Job { type: 'SEND_ENVELOPE' }
+
+Worker->>Redis Queue: Listen for 'SEND_ENVELOPE'
+Worker->>DocuSign API: Create Envelope
+DocuSign API-->>Webhook: POST /webhook (status=sent)
+
+Webhook->>Orchestrator: POST /process-webhook
+Orchestrator->>Redis Queue: Push Job { type: 'CHECK_STATUS' }
+
+Worker->>Redis Queue: Listen for 'CHECK_STATUS'
+Worker->>DocuSign API: Check status
+Worker->>DB: Save envelope status
+Worker->>Socket.IO (optional): Notify frontend
