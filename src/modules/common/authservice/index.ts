@@ -1,3 +1,3 @@
-import authRoutes from './components/authRoutes'
+import authRoutes from './components/authRoutes.js'
 
-export default[...authRoutes];
+export default authRoutes;

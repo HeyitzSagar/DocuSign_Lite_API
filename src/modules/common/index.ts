@@ -1,8 +1,8 @@
-import authservice from "./authservice";
+import authservice from "./authservice/index.js";
 
 
 const commonService = [
-    ...authservice
+    authservice
 ]
 
 export default commonService;

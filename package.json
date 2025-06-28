@@ -5,8 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "node --loader ts-node/esm src/index.ts",
-    "typeorm": "typeorm-ts-node-esm --dataSource src/data-source.ts"
+    "typeorm": "ts-node --esm node_modules/typeorm/cli.js --dataSource src/data-source.ts"
   },
   "type": "module",
   "keywords": [],
