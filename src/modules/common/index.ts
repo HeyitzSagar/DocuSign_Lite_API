@@ -1,4 +1,4 @@
-import authservice from "./authservice/index.js";
+import authservice from "./authService/index.js";
 
 
 const commonService = [
